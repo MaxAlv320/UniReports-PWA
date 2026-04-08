@@ -167,3 +167,45 @@ button:disabled {
     font-size: 14px;
   }
 }
+
+/* 🔴 OFFLINE */
+.offline {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: red;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 🟢 STATUS */
+.status {
+  display: inline-block;
+  padding: 4px 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.pendiente {
+  background: orange;
+  color: white;
+}
+
+.status.en-revision {
+  background: blue;
+  color: white;
+}
+
+.status.resuelto {
+  background: green;
+  color: white;
+}
