@@ -52,7 +52,7 @@ function getLocation() {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const location = {
-            city: Lat: ${position.coords.latitude.toFixed(4)}, Lon: ${position.coords.longitude.toFixed(4)},
+            city: `Lat: ${position.coords.latitude.toFixed(4)}, Lon: ${position.coords.longitude.toFixed(4)}`,
             lat: position.coords.latitude,
             lon: position.coords.longitude,
           };
@@ -98,7 +98,7 @@ saveBtn.onclick = async () => {
       lon: loc.lon,
       date: new Date().toLocaleString(),
       timestamp: Date.now(),
-      status: "pendiente", 
+      status: "pendiente",
     };
 
     await saveReport(report);
@@ -142,7 +142,7 @@ async function render() {
           📍 ${r.city}
         </a>`;
       } else {
-        locationHtml = <span class="location-text">📍 ${r.city}</span>;
+        locationHtml = `<span class="location-text">📍 ${r.city}</span>`;
       }
 
       div.innerHTML = `
@@ -161,7 +161,7 @@ async function render() {
       reportsContainer.appendChild(div);
     });
 
-    console.log(Mostrando ${reports.length} reportes);
+    console.log(`Mostrando ${reports.length} reportes`);
   } catch (error) {
     console.error("Error al renderizar:", error);
     reportsContainer.innerHTML =
