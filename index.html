@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>UniReports</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#007bff" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>UniReports</h1>
+
+      <input type="text" id="title" placeholder="Título del reporte" />
+      <textarea id="description" placeholder="Descripción" rows="3"></textarea>
+
+      <button id="openCamera">Abrir Cámara</button>
+      <button id="takePhoto" style="display: none">Tomar Foto</button>
+
+      <video id="video" autoplay style="display: none"></video>
+      <canvas id="canvas" style="display: none"></canvas>
+      <img id="preview" style="display: none" />
+
+      <button id="saveReport">Guardar Reporte</button>
+    </div>
+
+    <div class="container">
+      <h2>Reportes Guardados</h2>
+      <div id="reports"></div>
+    </div>
+
+    <script src="/js/db.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/sync.js"></script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((reg) => console.log("SW registrado:", reg))
+          .catch((err) => console.log("Error SW:", err));
+      }
+    </script>
+  </body>
+</html>
